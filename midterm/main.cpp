@@ -93,19 +93,14 @@ for (int j = 0; j < 3; j++) {
 
 프롬프트 :.resize(3) 말고 다른 방법 ㅇ벗나
 
-답변 3. 입력 개수를 유연하게 받기
-만약 점수 개수가 항상 3개가 아니라 학생마다 다를 수 있다면, 먼저 개수를 입력받고 그만큼 push_back 하면 됩니다 :
-
+답변 : 1. push_back 사용
 cpp
-cout << "Enter number of scores : ";
-int n;
-cin >> n;
-
-record.scores.clear();
-for (int j = 0; j < n; j++) {
-	double score;
-	cin >> score;
-	record.scores.push_back(score);
+cout << "Enter 3 scores : ";
+record.scores.clear(); // 이전 값 초기화
+for (int j = 0; j < 3; j++) {
+    double score;
+    cin >> score;
+    record.scores.push_back(score); // 입력받은 값을 벡터에 추가
 }
 ✅ 정리하면.resize(3) 대신 push_back을 쓰는 게 가장 깔끔하고 확장성도 좋아요.
 
